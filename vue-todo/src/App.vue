@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <TodoHeader></TodoHeader> <!-- TodoHeader 의 내용이 그대로 붙는다. -->
+      <TodoList></TodoList>
+      <TodoInput></TodoInput>
+      <TodoFooter></TodoFooter>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// from 위치의 Vue 파일을 갖고와서, 명명한 import 로 다 받겠다.
+import TodoHeader from './components/TodoHeader.vue'
+import TodoFooter from './components/TodoFooter.vue'
+import TodoList from './components/TodoList.vue'
+import TodoInput from './components/TodoInput.vue'
+
+// var my_cmp = {
+//   template: '<div> component </div>'
+// };
+
+// // script tag loading 해서 하는 방법
+// new Vue({
+//   el: '',
+//   components: { // local component
+//     'my_cmp': my_cmp
+//   }
+// })
 
 export default {
-  name: 'App',
+  name:'App',
   components: {
-    HelloWorld
+    // 컴포넌트 태그명: 컴포넌트 내용
+    'TodoHeader': TodoHeader,
+    'TodoFooter': TodoFooter,
+    'TodoList': TodoList,
+    'TodoInput': TodoInput
   }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
